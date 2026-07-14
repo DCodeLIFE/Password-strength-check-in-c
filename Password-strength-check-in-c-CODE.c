@@ -1,4 +1,4 @@
-/*Password-strength-check-in-c-1st-part
+/*Password-strength-check-in-c-2nd-part
 Check password strength*/
 
 #include <stdio.h>
@@ -29,7 +29,25 @@ int main()
         {
             if (c >= 0 && c <= 7)
             {
-                printf("Your password length is too short to ues\n");
+                printf("Your password length is too weak\n If you want to use this password press 'y' and if not press 'n' ");
+                scanf(" %c", &a[0]);
+                if (a[0] == 'y')
+                {
+
+                    if (u >= 1 && s >= 1 && n >= 1 && sp >= 1)
+                        printf("You generated a usable password\n");
+                    else if (u == 0)
+                        printf("Uppercase character is missing");
+                    else if (s == 0)
+                        printf("Lowercase character is missing");
+                    else if (n == 0)
+                        printf("Numeric character is missing");
+                    else if (sp == 0)
+                        printf("Special character is missing");
+
+                    printf("\nNo of Uppercase character is = %d \nNo of Lowercase character is = %d \nNo of Numeric character is = %d \nNo of Special character is = %d", u, s, n, sp);
+                }
+                else
                 {
                     printf("Try Again");
                 }
@@ -54,7 +72,26 @@ int main()
             }
             else if (c >= 17 && c <= 30)
             {
-                printf("Your password length is too long to use\n");
+                printf("Your password length is too long to use\n If you want to use this password press 'y' and if not press 'n' ");
+                scanf(" %c", &a[0]);
+                if (a[0] == 'y')
+                {
+                    {
+
+                        if (u >= 1 && s >= 1 && n >= 1 && sp >= 1)
+                            printf("You generated a usable password\n");
+                        else if (u == 0)
+                            printf("Uppercase character is missing");
+                        else if (s == 0)
+                            printf("Lowercase character is missing");
+                        else if (n == 0)
+                            printf("Numeric character is missing");
+                        else if (sp == 0)
+                            printf("Special character is missing");
+                    }
+                    printf("\nNo of Uppercase character is = %d \nNo of Lowercase character is = %d \nNo of Numeric character is = %d \nNo of Special character is = %d", u, s, n, sp);
+                }
+                else
                 {
                     printf("Try Again");
                 }
