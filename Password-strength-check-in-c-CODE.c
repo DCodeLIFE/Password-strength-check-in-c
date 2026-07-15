@@ -1,9 +1,10 @@
-/*Password-strength-check-in-c-2nd-part
+/*Password-strength-check-in-c-3rd-part
 Check password strength*/
 
 #include <stdio.h>
 #include <conio.h>
 #include <stdlib.h>
+void chk(int, int, int, int);
 int main()
 {
     int x = 1;
@@ -33,40 +34,20 @@ int main()
                 scanf(" %c", &a[0]);
                 if (a[0] == 'y')
                 {
-
-                    if (u >= 1 && s >= 1 && n >= 1 && sp >= 1)
-                        printf("You generated a usable password\n");
-                    else if (u == 0)
-                        printf("Uppercase character is missing");
-                    else if (s == 0)
-                        printf("Lowercase character is missing");
-                    else if (n == 0)
-                        printf("Numeric character is missing");
-                    else if (sp == 0)
-                        printf("Special character is missing");
-
+                    chk(u, s, n, sp);
                     printf("\nNo of Uppercase character is = %d \nNo of Lowercase character is = %d \nNo of Numeric character is = %d \nNo of Special character is = %d", u, s, n, sp);
                 }
                 else
                 {
                     printf("Try Again");
+                    getch();
                 }
             }
             else if (c >= 8 && c <= 16)
             {
                 printf("Your password length is perfect\n");
                 {
-
-                    if (u >= 1 && s >= 1 && n >= 1 && sp >= 1)
-                        printf("You generated a usable password\n");
-                    else if (u == 0)
-                        printf("Uppercase character is missing");
-                    else if (s == 0)
-                        printf("Lowercase character is missing");
-                    else if (n == 0)
-                        printf("Numeric character is missing");
-                    else if (sp == 0)
-                        printf("Special character is missing");
+                    chk(u, s, n, sp);
                 }
                 printf("\nNo of Uppercase character is = %d \nNo of Lowercase character is = %d \nNo of Numeric character is = %d \nNo of Special character is = %d", u, s, n, sp);
             }
@@ -77,23 +58,14 @@ int main()
                 if (a[0] == 'y')
                 {
                     {
-
-                        if (u >= 1 && s >= 1 && n >= 1 && sp >= 1)
-                            printf("You generated a usable password\n");
-                        else if (u == 0)
-                            printf("Uppercase character is missing");
-                        else if (s == 0)
-                            printf("Lowercase character is missing");
-                        else if (n == 0)
-                            printf("Numeric character is missing");
-                        else if (sp == 0)
-                            printf("Special character is missing");
+                        chk(u, s, n, sp);
                     }
                     printf("\nNo of Uppercase character is = %d \nNo of Lowercase character is = %d \nNo of Numeric character is = %d \nNo of Special character is = %d", u, s, n, sp);
                 }
                 else
                 {
                     printf("Try Again");
+                    getch();
                 }
             }
         }
@@ -102,4 +74,18 @@ int main()
     printf("\n______________________________________\n");
 
     return 0;
+}
+
+void chk(int u, int s, int n, int sp)
+{
+    if (u >= 1 && s >= 1 && n >= 1 && sp >= 1)
+        printf("You generated a usable password\n");
+    else if (u == 0)
+        printf("Uppercase character is missing");
+    else if (s == 0)
+        printf("Lowercase character is missing");
+    else if (n == 0)
+        printf("Numeric character is missing");
+    else if (sp == 0)
+        printf("Special character is missing");
 }
